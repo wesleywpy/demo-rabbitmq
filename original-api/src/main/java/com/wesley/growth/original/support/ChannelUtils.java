@@ -35,9 +35,8 @@ public class ChannelUtils {
 
         // 设置ConnectionFactory属性信息
         Map<String, Object> connectionFactoryPropertiesMap = new HashMap<>();
-        connectionFactoryPropertiesMap.put("principal", "RobertoHuang");
-        connectionFactoryPropertiesMap.put("description", "RGP订单系统V2.0");
-        connectionFactoryPropertiesMap.put("emailAddress", "RobertoHuang@foxmail.com");
+        connectionFactoryPropertiesMap.put("principal", "Wesley");
+        connectionFactoryPropertiesMap.put("description", "RabbitMq理解");
         connectionFactory.setClientProperties(connectionFactoryPropertiesMap);
 
         return connectionFactory;
