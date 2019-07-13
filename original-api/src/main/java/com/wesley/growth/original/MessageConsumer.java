@@ -31,13 +31,18 @@ public class MessageConsumer {
         channel.queueBind(declareOk.getQueue(), RabbitConstant.EXCHANGE_DIRECT_ORDER
                 , "add", new HashMap<>());
 
+
         // 消费者订阅消息 监听如上声明的队列 (队列名, 是否自动应答(与消息可靠有关 后续会介绍), 消费者标签, 消费者)
         channel.basicConsume(declareOk.getQueue(), true, "RGP订单系统ADD处理逻辑消费者", new DefaultConsumer(channel) {
             @Override
             public void handleDelivery(String consumerTag, Envelope envelope, AMQP.BasicProperties properties, byte[] body) throws IOException {
-                System.out.println(consumerTag);
+                System.out.println("-------- consumerTag: " + consumerTag);
                 System.out.println(envelope.toString());
                 System.out.println(properties.toString());
+
+                properties.getHeaders().forEach( (key, val) -> {
+                    System.out.println("-------- 自定义 header key: "+ key + ", value: "+ val);
+                });
                 System.out.println("消息内容:" + new String(body));
             }
         });
