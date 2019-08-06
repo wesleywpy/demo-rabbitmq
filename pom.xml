@@ -11,12 +11,13 @@
 
     <modules>
         <module>original-api</module>
+        <module>transaction-solution</module>
     </modules>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>1.5.8.RELEASE</version>
+        <version>2.0.9.RELEASE</version>
     </parent>
     
     <properties>
@@ -26,17 +27,6 @@
     </properties>
 
     <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>org.springframework.amqp</groupId>
-                <artifactId>spring-rabbit</artifactId>
-            </dependency
-            >
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-starter-amqp</artifactId>
-            </dependency>
-        </dependencies>
     </dependencyManagement>
 
 
